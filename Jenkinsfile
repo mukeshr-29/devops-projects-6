@@ -11,7 +11,7 @@ pipeline{
             steps{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonarqube') {
-                        sh 'mvn -Dmaven.repo.local=/tmp/.m2/repository clean package sonar:sonar'
+                        sh 'mvn -Duser.home=/tmp clean package sonar:sonar'
                     }
                 }
             }
