@@ -31,8 +31,9 @@ pipeline{
                 script{
  
                     sh '''
-                        docker build -t 44.211.222.177:9090/springapp:${VERSION} .
                         docker login -u admin -p mukesh123 44.211.222.177:9090
+                        docker build -t 44.211.222.177:9090/springapp:${VERSION} .
+
                         docker push 44.211.222.177:9090/springapp:${VERSION}
                         docker rmi 44.211.222.177:9090/springapp:${VERSION}
                     '''
